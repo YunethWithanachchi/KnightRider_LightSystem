@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KR Light System</title>
+    <link rel="stylesheet" href="/Style/KR-LightSystem.css">
+    <style>
+
+    </style>
+</head>
+<body style="background-color: darkblue">
+
+
+<section id="LightArray">
+
+    <div class="Lights"></div>
+    <div class="Lights"></div>git int
+    <div class="Lights"></div>
+    <div class="Lights"></div>
+    <div class="Lights"></div>
+    <div class="Lights"></div>
+
+</section>
+<span id="ButtonPanel">
+    <button id="Start">Start</button>
+    <button id="Stop">Stop</button>
+</span>
+
+<Audio id="Music" src="/Assets/Audio/Knight%20Rider%20Sms%20!%20Knight%20Rider%20!%20Theme.mp3" autoplay></Audio>
+
+<script src="/Assets/lib/jQuery/jquery-3.6.4.min.js"></script>
+
+<script>
+    var count=0;
+    var light = $('.Lights');
+    var Direction ='RIGHT';
+
+    var IntervalID=null;
+
+    console.log(light)
+
+
+
+    function UpdateLights(){
+        console.log('updated');
+
+        $('.Lights').css({background:'white'});
+
+        light[count].style.background='red';
+        if (count>0){
+            light[count-1].style.background='pink';
+        }
+        if (count<5){
+            light[count+1].style.background='pink';
+
+        }
+        if (count===5){
+            Direction='LEFT';
+        }else if(count===0)
+        {
+            Direction = 'RIGHT';
+        }
+
+        if (Direction==='RIGHT'){
+            count++;
+        }else {
+            count--;
+        }
+
+    }
+    $('#Start').on('click',()=>{
+
+        IntervalID=setInterval(UpdateLights,100);
+        $('#Music')[0].play();
+        console.log(IntervalID);
+    });
+    $('#Stop').on('click',()=>{
+
+        clearInterval(IntervalID);
+        $('#Music')[0].pause();
+        console.log(IntervalID);
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+.Lights{
+
+    height: 20px;
+    width: 50px;
+    border: 3px solid black;
+    margin-left: 10px;
+    display: inline-block;
+}
+#LightArray{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    width: fit-content;
+    height: fit-content;
+
+}
+#ButtonPanel{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+/*.Lights:first-child{*/
+/*    background-color:#6f3333;*/
+/*}*/
+/*.Lights:nth-child(2){*/
+/*    background-color: #9b4848;*/
+/*}*/
+/*.Lights:nth-child(3){*/
+/*    background-color: #a64d4d;*/
+/*}*/
+/*.Lights:nth-child(4){*/
+/*    background-color: #ba6b6b;*/
+/*}*/
